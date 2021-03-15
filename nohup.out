@@ -1,0 +1,202 @@
+python -m jvsnet train --train-file ../JVSnet_ref/train_data/JL22_train.mat \
+                                  --val-file ../JVSnet_ref/train_data/JL22_2_YSW_val.mat \
+							  --test-file ../JVSnet_ref/test_data/JL22_1_SJY_test.mat \
+                                  --name 3D_JL22 \
+                                      --batch-size 8 \
+                                      --cascades 10 \
+                                      --no-augment-flipud 1 \
+                                      --no-augment-fliplr 1 \
+                                      --no-augment-scale 1
+2021-03-05 09:10:04.611462: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+Use GPU: 0 for training
+Augmentation Configuration:
+	FlipUD: False
+	FlipLR: False
+	Scale: False
+input is from LORAKS
+../JVSnet_ref/train_data/JL22_train.mat (File) ''
+Last modif.: 'Thu Feb 25 06:23:04 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(1152, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(1152, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+
+../JVSnet_ref/train_data/JL22_2_YSW_val.mat (File) ''
+Last modif.: 'Thu Feb 25 04:35:46 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+
+../JVSnet_ref/test_data/JL22_1_SJY_test.mat (File) ''
+Last modif.: 'Thu Feb 25 04:36:24 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+
+Epoch: 1/500
+  0/144 [........] - ETA: 0s - loss: 0.0000e+00 - rmse: 0.0000e+00  1/144 [........] - ETA: 12:45 - loss: 7.9582e-04 - rmse: 0.0282   2/144 [........] - ETA: 8:13 - loss: 5.8970e-04 - rmse: 0.0239   3/144 [........] - ETA: 6:43 - loss: 4.8594e-04 - rmse: 0.0215  4/144 [........] - ETA: 5:54 - loss: 4.4172e-04 - rmse: 0.0205  5/144 [........] - ETA: 5:25 - loss: 4.0223e-04 - rmse: 0.0195  6/144 [........] - ETA: 5:04 - loss: 4.0534e-04 - rmse: 0.0197  7/144 [........] - ETA: 4:52 - loss: 4.4653e-04 - rmse: 0.0206  8/144 [........] - ETA: 4:41 - loss: 4.3224e-04 - rmse: 0.0203  9/144 [........] - ETA: 4:33 - loss: 4.2978e-04 - rmse: 0.0203 10/144 [........] - ETA: 4:24 - loss: 4.1840e-04 - rmse: 0.0201 11/144 [........] - ETA: 4:17 - loss: 4.2429e-04 - rmse: 0.0203 12/144 [........] - ETA: 4:12 - loss: 4.0755e-04 - rmse: 0.0198 13/144 [........] - ETA: 4:06 - loss: 3.8289e-04 - rmse: 0.0190 14/144 [........] - ETA: 4:02 - loss: 3.6289e-04 - rmse: 0.0184 15/144 [........] - ETA: 3:57 - loss: 3.9947e-04 - rmse: 0.0192 16/144 [........] - ETA: 3:53 - loss: 3.9615e-04 - rmse: 0.0191 17/144 [........] - ETA: 3:50 - loss: 4.0110e-04 - rmse: 0.0193 18/144 [>.......] - ETA: 3:46 - loss: 4.1367e-04 - rmse: 0.0196 19/144 [>.......] - ETA: 3:43 - loss: 4.1813e-04 - rmse: 0.0198 20/144 [>.......] - ETA: 3:41 - loss: 4.0853e-04 - rmse: 0.0195 21/144 [>.......] - ETA: 3:38 - loss: 4.1521e-04 - rmse: 0.0197 22/144 [>.......] - ETA: 3:35 - loss: 4.0590e-04 - rmse: 0.0195 23/144 [>.......] - ETA: 3:32 - loss: 3.9459e-04 - rmse: 0.0191 24/144 [>.......] - ETA: 3:29 - loss: 3.8537e-04 - rmse: 0.0189 25/144 [>.......] - ETA: 3:26 - loss: 3.7271e-04 - rmse: 0.0185 26/144 [>.......] - ETA: 3:23 - loss: 3.7820e-04 - rmse: 0.0186 27/144 [>.......] - ETA: 3:21 - loss: 3.8888e-04 - rmse: 0.0189 28/144 [>.......] - ETA: 3:18 - loss: 3.8902e-04 - rmse: 0.0189 29/144 [>.......] - ETA: 3:16 - loss: 3.8396e-04 - rmse: 0.0188 30/144 [>.......] - ETA: 3:14 - loss: 3.8102e-04 - rmse: 0.0188 31/144 [>.......] - ETA: 3:12 - loss: 3.7986e-04 - rmse: 0.0188 32/144 [>.......] - ETA: 3:09 - loss: 3.8768e-04 - rmse: 0.0190 33/144 [>.......] - ETA: 3:07 - loss: 3.9748e-04 - rmse: 0.0192 34/144 [>.......] - ETA: 3:05 - loss: 3.9454e-04 - rmse: 0.0191 35/144 [>.......] - ETA: 3:03 - loss: 3.9136e-04 - rmse: 0.0191 36/144 [=>......] - ETA: 3:01 - loss: 3.9156e-04 - rmse: 0.0191 37/144 [=>......] - ETA: 2:58 - loss: 3.8314e-04 - rmse: 0.0188 38/144 [=>......] - ETA: 2:56 - loss: 3.8462e-04 - rmse: 0.0189 39/144 [=>......] - ETA: 2:54 - loss: 3.8495e-04 - rmse: 0.0189 40/144 [=>......] - ETA: 2:52 - loss: 3.8466e-04 - rmse: 0.0189 41/144 [=>......] - ETA: 2:50 - loss: 3.8092e-04 - rmse: 0.0188 42/144 [=>......] - ETA: 2:48 - loss: 3.8619e-04 - rmse: 0.0190 43/144 [=>......] - ETA: 2:46 - loss: 3.8172e-04 - rmse: 0.0188 44/144 [=>......] - ETA: 2:44 - loss: 3.7809e-04 - rmse: 0.0188 45/144 [=>......] - ETA: 2:42 - loss: 3.7394e-04 - rmse: 0.0186 46/144 [=>......] - ETA: 2:40 - loss: 3.7005e-04 - rmse: 0.0185 47/144 [=>......] - ETA: 2:38 - loss: 3.6849e-04 - rmse: 0.0185 48/144 [=>......] - ETA: 2:36 - loss: 3.6764e-04 - rmse: 0.0185 49/144 [=>......] - ETA: 2:34 - loss: 3.6684e-04 - rmse: 0.0185 50/144 [=>......] - ETA: 2:32 - loss: 3.6444e-04 - rmse: 0.0184 51/144 [=>......] - ETA: 2:31 - loss: 3.6314e-04 - rmse: 0.0184 52/144 [=>......] - ETA: 2:29 - loss: 3.7122e-04 - rmse: 0.0186 53/144 [=>......] - ETA: 2:27 - loss: 3.6468e-04 - rmse: 0.0183 54/144 [==>.....] - ETA: 2:25 - loss: 3.6578e-04 - rmse: 0.0184 55/144 [==>.....] - ETA: 2:23 - loss: 3.6209e-04 - rmse: 0.0183 56/144 [==>.....] - ETA: 2:22 - loss: 3.6399e-04 - rmse: 0.0183 57/144 [==>.....] - ETA: 2:20 - loss: 3.6001e-04 - rmse: 0.0182 58/144 [==>.....] - ETA: 2:18 - loss: 3.5422e-04 - rmse: 0.0180 59/144 [==>.....] - ETA: 2:16 - loss: 3.5196e-04 - rmse: 0.0179 60/144 [==>.....] - ETA: 2:15 - loss: 3.5491e-04 - rmse: 0.0180 61/144 [==>.....] - ETA: 2:13 - loss: 3.5342e-04 - rmse: 0.0180 62/144 [==>.....] - ETA: 2:11 - loss: 3.4927e-04 - rmse: 0.0179 63/144 [==>.....] - ETA: 2:10 - loss: 3.5021e-04 - rmse: 0.0179 64/144 [==>.....] - ETA: 2:08 - loss: 3.4942e-04 - rmse: 0.0179 65/144 [==>.....] - ETA: 2:06 - loss: 3.4872e-04 - rmse: 0.0179 66/144 [==>.....] - ETA: 2:04 - loss: 3.4793e-04 - rmse: 0.0179 67/144 [==>.....] - ETA: 2:03 - loss: 3.5485e-04 - rmse: 0.0180 68/144 [==>.....] - ETA: 2:01 - loss: 3.5405e-04 - rmse: 0.0180 69/144 [==>.....] - ETA: 1:59 - loss: 3.5223e-04 - rmse: 0.0180 70/144 [==>.....] - ETA: 1:58 - loss: 3.5048e-04 - rmse: 0.0179 71/144 [==>.....] - ETA: 1:56 - loss: 3.4979e-04 - rmse: 0.0179 72/144 [===>....] - ETA: 1:54 - loss: 3.4917e-04 - rmse: 0.0179 73/144 [===>....] - ETA: 1:52 - loss: 3.4492e-04 - rmse: 0.0178 74/144 [===>....] - ETA: 1:51 - loss: 3.4242e-04 - rmse: 0.0177 75/144 [===>....] - ETA: 1:49 - loss: 3.4360e-04 - rmse: 0.0177 76/144 [===>....] - ETA: 1:48 - loss: 3.4170e-04 - rmse: 0.0177 77/144 [===>....] - ETA: 1:46 - loss: 3.4104e-04 - rmse: 0.0177 78/144 [===>....] - ETA: 1:44 - loss: 3.4449e-04 - rmse: 0.0178 79/144 [===>....] - ETA: 1:43 - loss: 3.4382e-04 - rmse: 0.0178 80/144 [===>....] - ETA: 1:41 - loss: 3.4279e-04 - rmse: 0.0177 81/144 [===>....] - ETA: 1:40 - loss: 3.3983e-04 - rmse: 0.0177 82/144 [===>....] - ETA: 1:38 - loss: 3.3890e-04 - rmse: 0.0176 83/144 [===>....] - ETA: 1:36 - loss: 3.3711e-04 - rmse: 0.0176 84/144 [===>....] - ETA: 1:35 - loss: 3.3771e-04 - rmse: 0.0176 85/144 [===>....] - ETA: 1:33 - loss: 3.3391e-04 - rmse: 0.0175 86/144 [===>....] - ETA: 1:32 - loss: 3.3220e-04 - rmse: 0.0174 87/144 [===>....] - ETA: 1:30 - loss: 3.3133e-04 - rmse: 0.0174 88/144 [===>....] - ETA: 1:28 - loss: 3.3032e-04 - rmse: 0.0174 89/144 [===>....] - ETA: 1:27 - loss: 3.3006e-04 - rmse: 0.0174 90/144 [====>...] - ETA: 1:25 - loss: 3.2955e-04 - rmse: 0.0174 91/144 [====>...] - ETA: 1:23 - loss: 3.3183e-04 - rmse: 0.0174 92/144 [====>...] - ETA: 1:22 - loss: 3.2914e-04 - rmse: 0.0173 93/144 [====>...] - ETA: 1:20 - loss: 3.2855e-04 - rmse: 0.0173 94/144 [====>...] - ETA: 1:18 - loss: 3.2613e-04 - rmse: 0.0173 95/144 [====>...] - ETA: 1:17 - loss: 3.3025e-04 - rmse: 0.0174 96/144 [====>...] - ETA: 1:15 - loss: 3.3226e-04 - rmse: 0.0174 97/144 [====>...] - ETA: 1:14 - loss: 3.2946e-04 - rmse: 0.0173 98/144 [====>...] - ETA: 1:12 - loss: 3.2769e-04 - rmse: 0.0173 99/144 [====>...] - ETA: 1:10 - loss: 3.2691e-04 - rmse: 0.0172100/144 [====>...] - ETA: 1:09 - loss: 3.2994e-04 - rmse: 0.0173101/144 [====>...] - ETA: 1:07 - loss: 3.2972e-04 - rmse: 0.0173102/144 [====>...] - ETA: 1:06 - loss: 3.3120e-04 - rmse: 0.0174103/144 [====>...] - ETA: 1:04 - loss: 3.3192e-04 - rmse: 0.0174104/144 [====>...] - ETA: 1:02 - loss: 3.3232e-04 - rmse: 0.0174105/144 [====>...] - ETA: 1:01 - loss: 3.3214e-04 - rmse: 0.0174106/144 [====>...] - ETA: 59s - loss: 3.3176e-04 - rmse: 0.0174 107/144 [====>...] - ETA: 58s - loss: 3.3199e-04 - rmse: 0.0174108/144 [=====>..] - ETA: 56s - loss: 3.3503e-04 - rmse: 0.0175109/144 [=====>..] - ETA: 54s - loss: 3.3805e-04 - rmse: 0.0176110/144 [=====>..] - ETA: 53s - loss: 3.3731e-04 - rmse: 0.0176111/144 [=====>..] - ETA: 51s - loss: 3.3731e-04 - rmse: 0.0176112/144 [=====>..] - ETA: 50s - loss: 3.3658e-04 - rmse: 0.0176113/144 [=====>..] - ETA: 48s - loss: 3.3653e-04 - rmse: 0.0176114/144 [=====>..] - ETA: 47s - loss: 3.3556e-04 - rmse: 0.0175115/144 [=====>..] - ETA: 45s - loss: 3.3559e-04 - rmse: 0.0176116/144 [=====>..] - ETA: 43s - loss: 3.3474e-04 - rmse: 0.0175117/144 [=====>..] - ETA: 42s - loss: 3.3202e-04 - rmse: 0.0174118/144 [=====>..] - ETA: 40s - loss: 3.3037e-04 - rmse: 0.0174119/144 [=====>..] - ETA: 39s - loss: 3.3105e-04 - rmse: 0.0174120/144 [=====>..] - ETA: 37s - loss: 3.3020e-04 - rmse: 0.0174121/144 [=====>..] - ETA: 35s - loss: 3.3131e-04 - rmse: 0.0174122/144 [=====>..] - ETA: 34s - loss: 3.3211e-04 - rmse: 0.0174Traceback (most recent call last):
+  File "/home/milab/anaconda3/envs/DL38/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/milab/anaconda3/envs/DL38/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/milab/LJH/3D_test1/jvsnet/__main__.py", line 14, in <module>
+    args.func(args)
+  File "/home/milab/LJH/3D_test1/jvsnet/cli/train.py", line 118, in main
+    mp.spawn(main_worker, nprocs=world_size, args=(world_size, args))
+  File "/home/milab/anaconda3/envs/DL38/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 199, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/milab/anaconda3/envs/DL38/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 157, in start_processes
+    while not context.join():
+  File "/home/milab/anaconda3/envs/DL38/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 75, in join
+    ready = multiprocessing.connection.wait(
+  File "/home/milab/anaconda3/envs/DL38/lib/python3.8/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/home/milab/anaconda3/envs/DL38/lib/python3.8/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Use GPU: 1 for training
+Augmentation Configuration:
+	FlipUD: False
+	FlipLR: False
+	Scale: False
+input is from LORAKS
+../JVSnet_ref/train_data/JL22_train.mat (File) ''
+Last modif.: 'Thu Feb 25 06:23:04 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(1152, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(1152, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+
+../JVSnet_ref/train_data/JL22_2_YSW_val.mat (File) ''
+Last modif.: 'Thu Feb 25 04:35:46 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+
+../JVSnet_ref/test_data/JL22_1_SJY_test.mat (File) ''
+Last modif.: 'Thu Feb 25 04:36:24 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+
+/home/milab/LJH/3D_test1/jvsnet/utils/transforms.py:115: UserWarning: The function torch.fft is deprecated and will be removed in PyTorch 1.8. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.fft or torch.fft.fftn. (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370172916/work/aten/src/ATen/native/SpectralOps.cpp:567.)
+  data = torch.fft(data, 2, normalized=True)
+/home/milab/LJH/3D_test1/jvsnet/utils/transforms.py:132: UserWarning: The function torch.ifft is deprecated and will be removed in a future PyTorch release. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.ifft or torch.fft.ifftn. (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370172916/work/aten/src/ATen/native/SpectralOps.cpp:578.)
+  data = torch.ifft(data, 2, normalized=True)
+Closing remaining open files:../JVSnet_ref/test_data/JL22_1_SJY_test.mat...done../JVSnet_ref/train_data/JL22_train.mat...done../JVSnet_ref/train_data/JL22_2_YSW_val.mat...done
+Use GPU: 2 for training
+Augmentation Configuration:
+	FlipUD: False
+	FlipLR: False
+	Scale: False
+input is from LORAKS
+../JVSnet_ref/train_data/JL22_train.mat (File) ''
+Last modif.: 'Thu Feb 25 06:23:04 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(1152, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(1152, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+
+../JVSnet_ref/train_data/JL22_2_YSW_val.mat (File) ''
+Last modif.: 'Thu Feb 25 04:35:46 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+
+../JVSnet_ref/test_data/JL22_1_SJY_test.mat (File) ''
+Last modif.: 'Thu Feb 25 04:36:24 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+
+/home/milab/LJH/3D_test1/jvsnet/utils/transforms.py:115: UserWarning: The function torch.fft is deprecated and will be removed in PyTorch 1.8. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.fft or torch.fft.fftn. (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370172916/work/aten/src/ATen/native/SpectralOps.cpp:567.)
+  data = torch.fft(data, 2, normalized=True)
+/home/milab/LJH/3D_test1/jvsnet/utils/transforms.py:132: UserWarning: The function torch.ifft is deprecated and will be removed in a future PyTorch release. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.ifft or torch.fft.ifftn. (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370172916/work/aten/src/ATen/native/SpectralOps.cpp:578.)
+  data = torch.ifft(data, 2, normalized=True)
+/home/milab/LJH/3D_test1/jvsnet/utils/transforms.py:115: UserWarning: The function torch.fft is deprecated and will be removed in PyTorch 1.8. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.fft or torch.fft.fftn. (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370172916/work/aten/src/ATen/native/SpectralOps.cpp:567.)
+  data = torch.fft(data, 2, normalized=True)
+/home/milab/LJH/3D_test1/jvsnet/utils/transforms.py:132: UserWarning: The function torch.ifft is deprecated and will be removed in a future PyTorch release. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.ifft or torch.fft.ifftn. (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370172916/work/aten/src/ATen/native/SpectralOps.cpp:578.)
+  data = torch.ifft(data, 2, normalized=True)
+Closing remaining open files:../JVSnet_ref/test_data/JL22_1_SJY_test.mat...done../JVSnet_ref/train_data/JL22_train.mat...done../JVSnet_ref/train_data/JL22_2_YSW_val.mat...done
+Closing remaining open files:../JVSnet_ref/test_data/JL22_1_SJY_test.mat...done../JVSnet_ref/train_data/JL22_2_YSW_val.mat...done../JVSnet_ref/train_data/JL22_train.mat...done
+Use GPU: 3 for training
+Augmentation Configuration:
+	FlipUD: False
+	FlipLR: False
+	Scale: False
+input is from LORAKS
+../JVSnet_ref/train_data/JL22_train.mat (File) ''
+Last modif.: 'Thu Feb 25 06:23:04 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(1152, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(1152, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(1152, 8, 30, 72, 128, 2), zlib(3)) ''
+
+../JVSnet_ref/train_data/JL22_2_YSW_val.mat (File) ''
+Last modif.: 'Thu Feb 25 04:35:46 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+
+../JVSnet_ref/test_data/JL22_1_SJY_test.mat (File) ''
+Last modif.: 'Thu Feb 25 04:36:24 2021'
+Object Tree: 
+/ (RootGroup) ''
+/Sens (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/X_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_JLORAKS (EArray(128, 30, 72, 128, 2), zlib(3)) ''
+/Y_kJLORAKS (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+/mask (EArray(128, 8, 30, 72, 128, 2), zlib(3)) ''
+
+/home/milab/LJH/3D_test1/jvsnet/utils/transforms.py:115: UserWarning: The function torch.fft is deprecated and will be removed in PyTorch 1.8. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.fft or torch.fft.fftn. (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370172916/work/aten/src/ATen/native/SpectralOps.cpp:567.)
+  data = torch.fft(data, 2, normalized=True)
+/home/milab/LJH/3D_test1/jvsnet/utils/transforms.py:132: UserWarning: The function torch.ifft is deprecated and will be removed in a future PyTorch release. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.ifft or torch.fft.ifftn. (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370172916/work/aten/src/ATen/native/SpectralOps.cpp:578.)
+  data = torch.ifft(data, 2, normalized=True)
+Closing remaining open files:../JVSnet_ref/test_data/JL22_1_SJY_test.mat...done../JVSnet_ref/train_data/JL22_train.mat...done../JVSnet_ref/train_data/JL22_2_YSW_val.mat...done
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/milab/anaconda3/envs/DL38/lib/python3.8/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+KeyboardInterrupt
+Makefile:4: recipe for target 'train_3D_JL22' failed
+make: *** [train_3D_JL22] Error 1
