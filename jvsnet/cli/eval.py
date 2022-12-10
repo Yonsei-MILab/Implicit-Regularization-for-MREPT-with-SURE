@@ -32,7 +32,7 @@ def main(args):
         augment_scale=False,
     )
 
-    model = JVSNet(num_echos=30, alfa=0.1, beta=0.1, cascades=args.cascades)
+    model = JVSNet(num_echos=14, alfa=0.1, beta=0.1, cascades=args.cascades)
 
     torch.cuda.set_device(args.gpu)
     model = model.cuda(args.gpu)

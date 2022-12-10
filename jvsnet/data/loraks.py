@@ -14,7 +14,7 @@ class MAGICDatasetLORAKS(Dataset):
     ):
         self.fname = h5_path
         self.tables = tables.open_file(self.fname)
-        print(self.tables)
+        # print(self.tables)
         self.nslices = self.tables.root.X_JLORAKS.shape[0]
         self.tables.close()
         self.X_JLORAKS = None  # reconstructed images from JLORAKS
@@ -68,30 +68,45 @@ class MAGICDatasetLORAKS(Dataset):
         #        Sens = np.tile(Sens,[1,8,1,1,1])
 
         if self.verbose:
+            """
             print("X_JLORAKS:", X_JLORAKS.shape, X_JLORAKS.dtype)
             print("Y_JLORAKS:", Y_JLORAKS.shape, Y_JLORAKS.dtype)
             print("Sens:", Sens.shape, Sens.dtype)
             print("Y_kJLORAKS:", Y_kJLORAKS.shape, Y_kJLORAKS.dtype)
             print("mask:", mask.shape, mask.dtype)
+            """
 
         """ Augmentation (Random Flipping (None, Left-Right, Up-Down), Scaling (0.9 - 1.1) """
-        if self.augment_flipud:
+        if self.augment_fliplr:
             """ Random Flipping """
             if np.random.random() < 0.5:
                 #                pdb.set_trace()
-                X_JLORAKS = self.AugmentFlip(X_JLORAKS, 1)
-                Y_JLORAKS = self.AugmentFlip(Y_JLORAKS, 1)
-                Sens = self.AugmentFlip(Sens, 2)
-                Y_kJLORAKS = self.AugmentFlip(Y_kJLORAKS, 2)
-                mask = self.AugmentFlip(mask, 2)
-
-        if self.augment_fliplr:
-            if np.random.random() < 0.5:
                 X_JLORAKS = self.AugmentFlip(X_JLORAKS, 2)
                 Y_JLORAKS = self.AugmentFlip(Y_JLORAKS, 2)
                 Sens = self.AugmentFlip(Sens, 3)
                 Y_kJLORAKS = self.AugmentFlip(Y_kJLORAKS, 3)
                 mask = self.AugmentFlip(mask, 3)
+
+
+        if self.augment_flipud:
+            if np.random.random() < 0.5:
+                X_JLORAKS = self.AugmentFlip(X_JLORAKS, 3)
+                Y_JLORAKS = self.AugmentFlip(Y_JLORAKS, 3)
+                Sens = self.AugmentFlip(Sens, 4)
+                Y_kJLORAKS = self.AugmentFlip(Y_kJLORAKS, 4)
+                mask = self.AugmentFlip(mask, 4)
+
+            X_JLORAKS = torch.flip(torch.from_numpy(X_JLORAKS), 3)
+            Y_JLORAKS = torch.flip(torch.from_numpy(Y_JLORAKS), 3)
+            Sens = torch.flip(torch.from_numpy(Sens), 4)
+            Y_kJLORAKS = torch.flip(torch.from_numpy(Y_kJLORAKS), 4)
+            mask = torch.flip(torch.from_numpy(mask), 4)
+
+            X_JLORAKS = np.array(X_JLORAKS)
+            Y_JLORAKS = np.array(Y_JLORAKS)
+            Sens = np.array(Sens)
+            Y_kJLORAKS = np.array(Y_kJLORAKS)
+            mask = np.array(mask)
 
         if self.augment_scale:
             scale_f = np.random.uniform(0.9, 1.1)

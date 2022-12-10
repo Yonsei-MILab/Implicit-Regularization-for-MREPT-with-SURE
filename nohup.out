@@ -200,3 +200,12 @@ Traceback (most recent call last):
 KeyboardInterrupt
 Makefile:4: recipe for target 'train_3D_JL22' failed
 make: *** [train_3D_JL22] Error 1
+[I 11:52:37.614 NotebookApp] Writing notebook server cookie secret to /run/user/1000/jupyter/notebook_cookie_secret
+[I 11:52:37.838 NotebookApp] The port 8888 is already in use, trying another port.
+[I 11:52:37.858 NotebookApp] Loading IPython parallel extension
+[I 11:52:37.860 NotebookApp] Serving notebooks from local directory: /home/milab/DeepLearning/Jaehun/JVS22_3D_t1
+[I 11:52:37.860 NotebookApp] The Jupyter Notebook is running at:
+[I 11:52:37.860 NotebookApp] http://(milab or 127.0.0.1):8889/
+[I 11:52:37.860 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 11:52:41.853 NotebookApp] Interrupted...
+[I 11:52:41.853 NotebookApp] Shutting down 0 kernels

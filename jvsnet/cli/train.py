@@ -34,16 +34,16 @@ def setup(parser):
         "--zpad", type=bool, default=False, help="Zero_pad as input or not"
     )
     parser.add_argument(
-        "--cascades", type=int, default=8, help="Cascade number for network"
+        "--cascades", type=int, default=10, help="Cascade number for network"
     )
     parser.add_argument(
-        "--batch-size", type=int, default=8, help="Number of Batchsize"
+        "--batch-size", type=int, default=10, help="Number of Batchsize"
     )
     parser.add_argument(
         "--epochs", type=int, default=1000, help="Epoch number for training"
     )
     parser.add_argument(
-        "--learning-rate", default=0.0003, type=float, help="Learning rate for network"
+        "--learning-rate", default=3e-4, type=float, help="Learning rate for network"
     )
     parser.add_argument(
         "--no-augment-flipud",
@@ -127,15 +127,16 @@ def main_worker(gpu, ngpus, args):
     world_size = ngpus
     dist.init_process_group(
         backend="nccl",
-        init_method="tcp://127.0.0.1:12346",
+        init_method="tcp://127.0.0.1:13345",
         world_size=world_size,
         rank=rank,
     )
 
-    model = JVSNet(num_echos=30, alfa=0.1, beta=0.1, cascades=args.cascades)
-
-    #for n, p in model.named_parameters():
-        #print(n, p.size())
+    model = JVSNet(num_echos=14, alfa=0.1, beta=0.1, cascades=args.cascades)
+    # print(sum(p.numel() for p in model.parameters() if p.requires_grad))
+    
+    # for n, p in model.named_parameters():
+    #     print(n, p.size())
 
     torch.cuda.set_device(gpu)
     model.cuda(gpu)
@@ -154,13 +155,15 @@ def main_worker(gpu, ngpus, args):
     # optionally resume from a checkpoint
     if args.resume:
         if os.path.isfile(args.resume):
-            print("=> loading checkpoint '{}'".format(args.resume))
-            loc = "cuda:{}".format(gpu)
+            # print("=> loading checkpoint '{}'".format(args.resume))
+            # loc = "cuda:{}".format(gpu)
+            loc = "cpu"
             checkpoint = torch.load(args.resume, map_location=loc)
             args.start_epoch = checkpoint["epoch"]
             best_loss = checkpoint["best_loss"]
             model.load_state_dict(checkpoint["state_dict"])
             optimizer.load_state_dict(checkpoint["optimizer"])
+
             print(
                 "=> loaded checkpoint '{}' (epoch {})".format(
                     args.resume, checkpoint["epoch"]
@@ -178,11 +181,13 @@ def main_worker(gpu, ngpus, args):
             f"\tScale: {not args.no_augment_scale}"
         )
     )
+
     train_aug = dict(
         augment_flipud=not args.no_augment_flipud,
         augment_fliplr=not args.no_augment_fliplr,
         augment_scale=not args.no_augment_scale,
     )
+    
     valtest_aug = dict(
         augment_flipud=False,
         augment_fliplr=False,
@@ -196,7 +201,7 @@ def main_worker(gpu, ngpus, args):
         val_dataset = MAGICDatasetZpad(args.val_file, **valtest_aug, verbosity=False)
         test_dataset = MAGICDatasetZpad(args.test_file, **valtest_aug, verbosity=False)
     else:
-        print("input is from LORAKS")
+        # print("input is from LORAKS")
         train_dataset = MAGICDatasetLORAKS(
             args.train_file, **train_aug, verbosity=False
         )
@@ -232,7 +237,6 @@ def main_worker(gpu, ngpus, args):
 
     for epoch in range(args.start_epoch, args.epochs):
         train_sampler.set_epoch(epoch)
-
         kbar = (
             pkbar.Kbar(
                 target=len(train_loader), epoch=epoch, num_epochs=args.epochs, width=8
@@ -314,8 +318,6 @@ def train(train_loader, model, criterion, optimizer, gpu, kbar):
         if kbar is not None:
             kbar.update(i, values=[("loss", loss.item()), ("rmse", rmse.item())])
 
-        # if i > 2:
-        #     break
 
     return sum(losses) / len(losses), sum(rmses) / len(rmses)
 
@@ -383,4 +385,4 @@ def show_output(model, testdata, gpu):
             padding=0,
         )
 
-    return make_grid([_make_image(i) for i in range(30)], nrow=1, padding=0)
+    return make_grid([_make_image(i) for i in range(14)], nrow=1, padding=0)

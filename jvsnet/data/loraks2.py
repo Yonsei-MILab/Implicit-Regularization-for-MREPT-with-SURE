@@ -15,7 +15,7 @@ class MAGICDatasetLORAKS(Dataset):
         self.fname = h5_path
         self.tables = tables.open_file(self.fname)
         # print(self.tables)
-        print(self.tables.root.X_JLORAKS_se.shape)
+        # print(self.tables.root.X_JLORAKS_se.shape)
         self.nslices = self.tables.root.X_JLORAKS_se.shape[0]
         self.tables.close()
         self.X_JLORAKS = None  # reconstructed images from JLORAKS
@@ -69,11 +69,13 @@ class MAGICDatasetLORAKS(Dataset):
         # Sens = np.tile(Sens,[1,8,1,1,1])
 
         if self.verbose:
+            """
             print("X_JLORAKS:", X_JLORAKS.shape, X_JLORAKS.dtype)
             print("Y_JLORAKS:", Y_JLORAKS.shape, Y_JLORAKS.dtype)
             print("Sens:", Sens.shape, Sens.dtype)
             print("X_kJLORAKS:", X_kJLORAKS.shape, X_kJLORAKS.dtype)
             print("mask:", mask.shape, mask.dtype)
+            """
 
         """ Augmentation (Random Flipping (None, Left-Right, Up-Down), Scaling (0.9 - 1.1) """
         if self.augment_flipud:

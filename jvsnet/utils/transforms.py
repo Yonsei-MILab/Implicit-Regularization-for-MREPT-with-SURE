@@ -6,6 +6,11 @@ LICENSE file in the root directory of this source tree.
 
 import numpy as np
 import torch
+import torch.nn as nn
+
+def piecewise_relu(x):
+    return x + nn.functional.relu(1 / 2 * (x - 1), inplace=True) + \
+        nn.functional.relu(1 / 2 * (-1 - x), inplace=True)
 
 
 def complex_multiply(x, y, u, v):
