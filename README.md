@@ -45,4 +45,4 @@ However, the MWI map was seriously impaired by motion artifacts with high NMSE v
 
 This figure shows results acquired from the prospectively under-sampled datasets (R=3x3) by applying a modified mGRE sequence along with the fully sampled data for comparison.
 
-In addition, in the fully sampled case, slight ringing artifacts can be seen due to motion during the long scan time, which is mitigated in the prospective 2:22 minutes scan.
+In addition, in the fully sampled case, slight ringing artifacts (green arrows) can be seen due to motion during the long scan time, which is mitigated in the prospective 2:22 minutes scan.
