@@ -20,17 +20,17 @@ The proposed JUST-Net accelerates 3D mGRE acquisition from 15:23 minutes to only
   <img src="https://user-images.githubusercontent.com/59819627/206959200-01d09629-122f-4a35-a45a-2c0510c9f165.png"/>
 </p>
 
-## Reconstructed 3D MWI with error maps of the comparative methods at R=3x3-fold acceleration
+## Reconstructed 3D MWI with error maps of the comparative methods @ R=3x3-fold acceleration
 <p align="center">
   <img src="https://user-images.githubusercontent.com/59819627/206959987-dbfddb57-5ee6-4e5c-ae56-33f9b610f9be.png"/>
 </p>
 
-## Reconstructed results of the proposed method from motion-simulated data at R=3x3-fold acceleration
+## Reconstructed results of the proposed method from motion-simulated data @ R=3x3-fold acceleration
 <p align="center">
   <img src="https://user-images.githubusercontent.com/59819627/206960029-553b5cf0-2797-4dae-b96a-33738f461c21.png"/>
 </p>
 
-## The high-fidelity mGRE images with MWF maps of the prospectively under-sampled dataset reconstructed from the proposed JUST-Net at R=3x3-fold acceleration
+## The high-fidelity mGRE images with MWF maps of the prospectively under-sampled dataset reconstructed from the proposed JUST-Net @ R=3x3-fold acceleration
 <p align="center">
   <img src="https://user-images.githubusercontent.com/59819627/206960077-690455b3-8bc1-4df9-8970-e275f6f3dfef.png"/>
 </p>
