@@ -19,6 +19,7 @@ The JUST-Net accelerates 3D mGRE acquisition from 15:23 minutes to only 2:22 min
 <p align="center">
   <img src="https://user-images.githubusercontent.com/59819627/206959200-01d09629-122f-4a35-a45a-2c0510c9f165.png"/>
 </p>
+
 The JUST-Net takes four inputs: coil-combined under-sampled multi-echo images, under-sampled k-space data, coil sensitivity maps, and binary under-sampling mask.
 
 To solve the optimization problem, the JUST-Net was built with consisting of four main blocks: data consistency block (DC Block), k-space denoiser block (KCNN Block), image space spatio-temporal denoiser block (ISTCNN Block), and weight averaging block (WA Block).
