@@ -13,4 +13,6 @@ Furthermore, we apply spatio-temporal convolutions on the image space not only t
 
 The proposed reconstruction network is evaluated on retrospectively under-sampled data, motion-simulated data, and prospectively accelerated acquisition.
 
-The proposed JUST-Net accelerates 3D mGRE acquisition from 15:23 minutes to only 2:22 minutes for whole-brain MWI of 1.5 mm × 1.5 mm × 1.5 mm isotropic resolution and could be applied in clinical practices.
+The proposed JUST-Net accelerates 3D mGRE acquisition from 15:23 minutes to only 2:22 minutes for whole-brain MWI of 1.5 mm × 1.5 mm × 1.5 mm isotropic resolution and c
+ould be applied in clinical practices.
+![image](https://user-images.githubusercontent.com/59819627/206959200-01d09629-122f-4a35-a45a-2c0510c9f165.png)
