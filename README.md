@@ -18,4 +18,4 @@ The proposed JUST-Net accelerates 3D mGRE acquisition from 15:23 minutes to only
 <p align="center">
   [Overall architecture of the JUST-Net]
 </p>
-[image](https://user-images.githubusercontent.com/59819627/206959200-01d09629-122f-4a35-a45a-2c0510c9f165.png)
+![image](https://user-images.githubusercontent.com/59819627/206959200-01d09629-122f-4a35-a45a-2c0510c9f165.png)
