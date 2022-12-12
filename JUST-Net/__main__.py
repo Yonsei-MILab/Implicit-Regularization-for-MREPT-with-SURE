@@ -9,6 +9,5 @@ if __name__ == "__main__":
     subparsers = parser.add_subparsers()
     train_setup(subparsers.add_parser("train"))
     eval_setup(subparsers.add_parser("eval"))
-    # train2_setup(subparsers.add_parser("train2"))
     args = parser.parse_args()
     args.func(args)

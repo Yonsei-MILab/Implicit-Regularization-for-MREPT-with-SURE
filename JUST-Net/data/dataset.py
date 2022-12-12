@@ -4,7 +4,7 @@ from torch.utils.data import Dataset
 import tables
 
 
-class MAGICDatasetLORAKS(Dataset):
+class MakeDataset(Dataset):
     """Dataloader that Load & Augment & change to Torch Tensors (For Training)
     Inputs : path to Dataset (.h5)
     Outputs : [X_JLORAKS, Y_JLORAKS, Sens, Y_kJLORAKS, mask]"""
